@@ -1,0 +1,30 @@
+# Write a program that asks the user how many Fibonacci numbers to generate and then generates them.
+# Take this opportunity to think about how you can use functions.
+# Make sure to ask the user to enter the number of numbers in the sequence to generate.
+# (Hint: The Fibonacci sequence is a sequence of numbers where the next number in
+# the sequence is the sum of the previous two numbers in the sequence. The sequence
+# looks like this: 1, 1, 2, 3, 5, 8, 13, …)
+
+def fibbi(i):
+    if i.isdigit():
+        if int(i) >= 2:
+            final = int(i)
+            fib_l = [1, 1]
+            while final > 2:
+                start = fib_l[-2] + fib_l[-1]
+                fib_l.append(start)
+                final -= 1
+            print(fib_l)
+            print(f'Here are {len(fib_l)} numbers of the Fibonacci sequence.')
+
+        elif int(i) == 0:
+            print('[0]')
+
+        elif int(i) == 1:
+            print('[1]')
+
+    else:
+        print(f'You have entered "{i}" which is not a number.')
+
+
+fibbi(input("How many numbers in the Fibonacci sequence would you like?: "))
