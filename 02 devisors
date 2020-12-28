@@ -1,0 +1,15 @@
+#enter a number and output all of the numbers that devide into it:
+
+def devis(i):
+    listA = range(1, int(i)+1)
+    listB = []
+    x = 1
+    while x <= listA[-1]:
+        if listA[-1]/x == int(listA[-1]/x):
+            listB.append(x)
+            x += 1
+        else:
+            x += 1
+    print(f'The Devisors for {int(i)} are: ', [*listB])
+
+devis(input('enter a number to print its Devisors: '))
